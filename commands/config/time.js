@@ -6,7 +6,7 @@ function padStart(str) {
 async function run() {
   const now = new Date();
   const UTC = `${now.getUTCFullYear()}-${padStart(
-    now.getUTCMonth(),
+    now.getUTCMonth() + 1,
   )}-${padStart(now.getUTCDate())}T${padStart(now.getUTCHours())}:${padStart(
     now.getUTCMinutes(),
   )}:${padStart(now.getUTCSeconds())}`;
