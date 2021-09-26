@@ -1,12 +1,11 @@
-const commander = require('commander');
+import commander from 'commander';
+
+import { run as all } from './all.js';
+import { run as unused } from './unused.js';
+import { run as remove } from './remove.js';
+import { run as battery } from './battery.js';
 
 const program = new commander.Command('sensors');
-
-const all = require('./all');
-const unused = require('./unused');
-const remove = require('./remove');
-const battery = require('./battery');
-
 program
   .command('remove <sensorIds...>')
   .description('Remove given sensorId')
@@ -21,4 +20,4 @@ program
   .description('Returns battery of every sensors')
   .action(battery);
 
-module.exports = program;
+export default program;

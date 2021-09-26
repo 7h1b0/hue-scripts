@@ -1,9 +1,10 @@
-const fetch = require('../../lib/fetch');
+import { fetch } from '../../lib/fetch.js';
 
 function padStart(str) {
   return `${str}`.padStart(2, '0');
 }
-async function run() {
+
+export async function run() {
   const now = new Date();
   const UTC = `${now.getUTCFullYear()}-${padStart(
     now.getUTCMonth() + 1,
@@ -21,5 +22,3 @@ async function run() {
     console.error(err);
   }
 }
-
-module.exports = run;

@@ -1,14 +1,18 @@
 #!/usr/bin/env node
 
-const program = require('commander');
+import program from 'commander';
 
-const scenesCommand = require('./commands/scenes/');
-const sensorsCommand = require('./commands/sensors/');
-const configCommand = require('./commands/config/');
+import scenesCommand from './commands/scenes/index.js';
+import sensorsCommand from './commands/sensors/index.js';
+import rulesCommand from './commands/rules/index.js';
+import configCommand from './commands/config/index.js';
+import capabilitiesCommand from './commands/capabilities/index.js';
 
 program.addCommand(scenesCommand);
 program.addCommand(sensorsCommand);
+program.addCommand(rulesCommand);
 program.addCommand(configCommand);
+program.addCommand(capabilitiesCommand);
 
 program.on('command:*', (operands) => {
   console.error(`error: unknown command '${operands[0]}'`);

@@ -1,5 +1,5 @@
-const fetch = require('../../lib/fetch');
-const { toArray } = require('../../lib/helpers');
+import { fetch } from '../../lib/fetch.js';
+import { toArray } from '../../lib/helpers.js';
 
 function findSceneInSchedules(schedules, id) {
   return schedules.filter((schedule) => {
@@ -17,7 +17,7 @@ function findSceneInRules(rules, id) {
   });
 }
 
-async function run() {
+export async function run() {
   const schedules = toArray(await fetch('/schedules'));
   const rules = toArray(await fetch('/rules'));
   const scenes = toArray(await fetch('/scenes'));
@@ -37,5 +37,3 @@ async function run() {
     console.log('Every scene is used');
   }
 }
-
-module.exports = run;

@@ -1,12 +1,12 @@
-const commander = require('commander');
+import commander from 'commander';
+
+import { run as recall } from './recall.js';
+import { run as all } from './all.js';
+import { run as unused } from './unused.js';
+import { run as remove } from './remove.js';
+import { run as sample } from './sample.js';
 
 const program = new commander.Command('scenes');
-
-const recall = require('./recall');
-const all = require('./all');
-const unused = require('./unused');
-const remove = require('./remove');
-const sample = require('./sample');
 
 program
   .command('recall <id>')
@@ -28,4 +28,4 @@ program.command('all').description('Display all scenes').action(all);
 
 program.command('unused').description('Find unused scenes').action(unused);
 
-module.exports = program;
+export default program;

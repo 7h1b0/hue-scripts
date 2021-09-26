@@ -1,5 +1,5 @@
-const fetch = require('../../lib/fetch');
-const { toArray } = require('../../lib/helpers');
+import { fetch } from '../../lib/fetch.js';
+import { toArray } from '../../lib/helpers.js';
 
 function findSensorInSchedules(schedules, id) {
   return schedules.filter((schedule) => {
@@ -21,7 +21,7 @@ function findSensorInRules(rules, id) {
   });
 }
 
-async function run() {
+export async function run() {
   const schedules = toArray(await fetch('/schedules'));
   const rules = toArray(await fetch('/rules'));
   const sensors = toArray(await fetch('/sensors'));
@@ -43,5 +43,3 @@ async function run() {
     console.log('Every sensor is used');
   }
 }
-
-module.exports = run;

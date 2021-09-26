@@ -1,7 +1,7 @@
-const { off } = require('../../lib/helpers');
-const fetch = require('../../lib/fetch');
+import { off } from '../../lib/helpers.js';
+import { fetch } from '../../lib/fetch.js';
 
-async function run(id) {
+export async function run(id) {
   try {
     await off();
     await fetch('/groups/0/action', {
@@ -12,5 +12,3 @@ async function run(id) {
     console.error(err);
   }
 }
-
-module.exports = run;

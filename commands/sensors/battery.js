@@ -1,6 +1,6 @@
-const fetch = require('../../lib/fetch');
+import { fetch } from '../../lib/fetch.js';
 
-async function run() {
+export async function run() {
   try {
     const res = await fetch('/sensors');
 
@@ -18,5 +18,3 @@ async function run() {
     console.error(err);
   }
 }
-
-module.exports = run;

@@ -2,8 +2,10 @@ import { fetch } from '../../lib/fetch.js';
 
 export async function run() {
   try {
-    const res = await fetch('/scenes');
-    console.log(res);
+    const result = await fetch('/capabilities', {
+      method: 'GET',
+    });
+    console.log(result);
   } catch (err) {
     console.error(err);
   }

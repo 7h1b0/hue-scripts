@@ -1,11 +1,12 @@
-const fetch = require('../../lib/fetch');
-const { toArray } = require('../../lib/helpers');
-const recall = require('./recall');
+import { fetch } from '../../lib/fetch.js';
+import { toArray } from '../../lib/helpers.js';
+import { run as recall } from './recall.js';
 
 async function delay(sec = 1) {
   return new Promise((resolve) => setTimeout(resolve, sec * 1000));
 }
-async function run({ time }) {
+
+export async function run({ time }) {
   const scenes = toArray(await fetch('/scenes'));
 
   console.log(`There are ${scenes.length} scenes on your Hue Bridge`);
@@ -17,5 +18,3 @@ async function run({ time }) {
   }
   console.log('Done ;)');
 }
-
-module.exports = run;
