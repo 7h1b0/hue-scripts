@@ -1,8 +1,8 @@
-import commander from 'commander';
+import { Command } from 'commander';
 
 import { run as all } from './all.js';
 
-const program = new commander.Command('rules');
+const program = new Command('rules');
 
 program.command('all').description('Display all rules').action(all);
 

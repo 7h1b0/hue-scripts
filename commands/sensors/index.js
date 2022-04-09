@@ -1,11 +1,11 @@
-import commander from 'commander';
+import { Command } from 'commander';
 
 import { run as all } from './all.js';
 import { run as unused } from './unused.js';
 import { run as remove } from './remove.js';
 import { run as battery } from './battery.js';
 
-const program = new commander.Command('sensors');
+const program = new Command('sensors');
 program
   .command('remove <sensorIds...>')
   .description('Remove given sensorId')

@@ -1,7 +1,7 @@
-import commander from 'commander';
+import { Command } from 'commander';
 import { run as fetchCapabilities } from './fetch.js';
 
-const program = new commander.Command('capabilities');
+const program = new Command('capabilities');
 
 export default program
   .command('fetch')
