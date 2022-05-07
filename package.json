@@ -4,6 +4,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "pre-commit": "pretty-quick --staged"
+  },
   "bin": {
     "hue": "./index.js"
   },
@@ -12,12 +16,14 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^9.1.0",
-    "lilconfig": "^2.0.5",
-    "node-fetch": "^3.2.3"
+    "lilconfig": "^2.0.5"
   },
   "devDependencies": {
-    "husky": "^4.3.8",
+    "husky": "^7.0.4",
     "prettier": "^2.6.2",
     "pretty-quick": "^3.1.1"
+  },
+  "engines": {
+    "node": ">= 18"
   }
 }
