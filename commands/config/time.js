@@ -1,4 +1,4 @@
-import { fetch } from '../../lib/fetch.js';
+import { request } from '../../lib/fetch.js';
 
 function padStart(str) {
   return `${str}`.padStart(2, '0');
@@ -13,7 +13,7 @@ export async function run() {
   )}:${padStart(now.getUTCSeconds())}`;
 
   try {
-    await fetch('/config', {
+    await request('/config', {
       method: 'PUT',
       body: JSON.stringify({ UTC }),
     });

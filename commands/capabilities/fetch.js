@@ -1,8 +1,8 @@
-import { fetch } from '../../lib/fetch.js';
+import { request } from '../../lib/fetch.js';
 
 export async function run() {
   try {
-    const result = await fetch('/capabilities', {
+    const result = await request('/capabilities', {
       method: 'GET',
     });
     console.log(result);

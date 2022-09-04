@@ -1,4 +1,4 @@
-import { fetch } from '../../lib/fetch.js';
+import { request } from '../../lib/fetch.js';
 import { toArray } from '../../lib/helpers.js';
 
 function findSceneInSchedules(schedules, id) {
@@ -18,9 +18,9 @@ function findSceneInRules(rules, id) {
 }
 
 export async function run() {
-  const schedules = toArray(await fetch('/schedules'));
-  const rules = toArray(await fetch('/rules'));
-  const scenes = toArray(await fetch('/scenes'));
+  const schedules = toArray(await request('/schedules'));
+  const rules = toArray(await request('/rules'));
+  const scenes = toArray(await request('/scenes'));
 
   const unusedScenes = scenes.filter(({ id }) => {
     const usedByschedules = findSceneInSchedules(schedules, id);

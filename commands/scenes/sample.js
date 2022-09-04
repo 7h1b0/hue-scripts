@@ -1,4 +1,4 @@
-import { fetch } from '../../lib/fetch.js';
+import { request } from '../../lib/fetch.js';
 import { toArray } from '../../lib/helpers.js';
 import { run as recall } from './recall.js';
 
@@ -7,7 +7,7 @@ async function delay(sec = 1) {
 }
 
 export async function run({ time }) {
-  const scenes = toArray(await fetch('/scenes'));
+  const scenes = toArray(await request('/scenes'));
 
   console.log(`There are ${scenes.length} scenes on your Hue Bridge`);
 

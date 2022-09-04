@@ -1,9 +1,9 @@
-import { fetch } from '../../lib/fetch.js';
+import { request } from '../../lib/fetch.js';
 
 export async function run(sensorIds) {
   for (id of sensorIds) {
     try {
-      await fetch(`sensors/${id}`, {
+      await request(`sensors/${id}`, {
         method: 'DELETE',
       });
     } catch (err) {

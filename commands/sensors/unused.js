@@ -1,4 +1,4 @@
-import { fetch } from '../../lib/fetch.js';
+import { request } from '../../lib/fetch.js';
 import { toArray } from '../../lib/helpers.js';
 
 function findSensorInSchedules(schedules, id) {
@@ -22,9 +22,9 @@ function findSensorInRules(rules, id) {
 }
 
 export async function run() {
-  const schedules = toArray(await fetch('/schedules'));
-  const rules = toArray(await fetch('/rules'));
-  const sensors = toArray(await fetch('/sensors'));
+  const schedules = toArray(await request('/schedules'));
+  const rules = toArray(await request('/rules'));
+  const sensors = toArray(await request('/sensors'));
 
   const unusedSensors = sensors.filter(({ id }) => {
     const usedByschedules = findSensorInSchedules(schedules, id);
